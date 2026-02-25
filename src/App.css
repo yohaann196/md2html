@@ -1,0 +1,250 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f9f9f9;
+  color: #1a1a1a;
+  transition: background 0.2s, color 0.2s;
+}
+
+.app.dark {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 52px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.dark .toolbar {
+  background: #252525;
+  border-bottom-color: #333;
+}
+
+.toolbar-title {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: inherit;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+}
+
+.dark .btn {
+  border-color: #444;
+}
+
+.dark .btn:hover {
+  background: #333;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.dark .btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.panes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid #e0e0e0;
+}
+
+.dark .pane {
+  border-right-color: #333;
+}
+
+.pane:last-child {
+  border-right: none;
+}
+
+.pane-header {
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+
+.dark .pane-header {
+  background: #252525;
+  border-bottom-color: #333;
+  color: #666;
+}
+
+.editor {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  background: #fff;
+  color: inherit;
+  tab-size: 2;
+}
+
+.dark .editor {
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.preview {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 28px;
+  background: #fff;
+  line-height: 1.7;
+}
+
+.dark .preview {
+  background: #1e1e1e;
+}
+
+.preview h1, .preview h2, .preview h3,
+.preview h4, .preview h5, .preview h6 {
+  margin: 1.2em 0 0.4em;
+  line-height: 1.3;
+}
+
+.preview h1 { font-size: 2em; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.3em; }
+.preview h2 { font-size: 1.5em; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.2em; }
+
+.dark .preview h1, .dark .preview h2 {
+  border-bottom-color: #333;
+}
+
+.preview p { margin: 0.75em 0; }
+
+.preview a { color: #2563eb; text-decoration: none; }
+.preview a:hover { text-decoration: underline; }
+
+.preview ul, .preview ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.preview li { margin: 0.25em 0; }
+
+.preview blockquote {
+  border-left: 4px solid #ddd;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: #666;
+}
+
+.dark .preview blockquote {
+  border-left-color: #444;
+  color: #888;
+}
+
+.preview pre {
+  margin: 1em 0;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.preview code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.88em;
+}
+
+.preview p code {
+  background: #f0f0f0;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.dark .preview p code {
+  background: #2d2d2d;
+}
+
+.preview table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.preview th, .preview td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.dark .preview th, .dark .preview td {
+  border-color: #444;
+}
+
+.preview th {
+  background: #f4f4f4;
+  font-weight: 600;
+}
+
+.dark .preview th {
+  background: #2a2a2a;
+}
+
+.dark .preview .hljs {
+  background: #2d2d2d;
+  color: #ccc;
+}
+
+.preview img {
+  max-width: 100%;
+}
+
+.preview hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 1.5em 0;
+}
+
+.dark .preview hr {
+  border-top-color: #333;
+}
